@@ -26,7 +26,7 @@ The `peerId` keys remain in the Yjs map because they're needed to make a peer's 
 - **Pros.** The trust property is structural, not policy. A team running this in a meeting can point at the source code and say "the aggregate is all you'll ever see." That's the property that makes people tick honestly.
 - **Pros.** Pairs naturally with `crypto.randomUUID()` peer IDs that mean nothing to anyone outside the device.
 - **Cons.** A small loss of value. Pairing recommendations are something a manager could do manually after the meeting by asking "who knows X and wants to learn Y?" — but the tool won't do it for them.
-- **Cons.** A motivated attacker with packet capture inside the room *could* in principle correlate `peerId` with IP address. This is documented in `docs/privacy.md` as out of threat-model scope for the v1 exercise; in v2 we'd consider Semaphore-style commit-reveal where the per-peer map keys are zero-knowledge commitments and only aggregates are reconstructible.
+- **Cons.** A motivated attacker with packet capture inside the room _could_ in principle correlate `peerId` with IP address. This is documented in `docs/privacy.md` as out of threat-model scope for the v1 exercise; in v2 we'd consider Semaphore-style commit-reveal where the per-peer map keys are zero-knowledge commitments and only aggregates are reconstructible.
 
 ## Alternatives considered
 

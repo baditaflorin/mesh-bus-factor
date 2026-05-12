@@ -13,7 +13,7 @@ The list of topics ("auth," "billing," "deploy," …) needs to be agreed-upon fo
 2. **Per-peer local lists.** Useless — peers wouldn't be ticking the same buckets.
 3. **One shared list in the Yjs document.**
 
-Option 3 is right. The question is *who can edit it*.
+Option 3 is right. The question is _who can edit it_.
 
 ## Decision
 
