@@ -1,6 +1,9 @@
 export const appConfig = {
   appName: "mesh-bus-factor",
   storagePrefix: "mesh-bus-factor",
+  description:
+    "Peer-to-peer mesh: anonymous bus-factor map. Engineers tick systems they could carry; surfaces single points of failure.",
+  accentHex: "#3fd4eb",
   version: __APP_VERSION__,
   commit: __GIT_COMMIT__,
   repositoryUrl: "https://github.com/baditaflorin/mesh-bus-factor",
