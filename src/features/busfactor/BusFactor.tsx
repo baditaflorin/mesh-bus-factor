@@ -222,7 +222,9 @@ export function BusFactor({ roomId, peerId }: Props) {
   return (
     <div className="busfactor-stage">
       <div className="busfactor-hud">
-        <span>{peers} phones</span>
+        <span>
+          {peers} {peers === 1 ? "peer" : "peers"}
+        </span>
         <span>·</span>
         <span>{coverage.size} responses</span>
         <span>·</span>
@@ -264,7 +266,7 @@ export function BusFactor({ roomId, peerId }: Props) {
 
       <section className="busfactor-self">
         <h2>Your private ticks</h2>
-        <p className="busfactor-self-help">Only counts leave your phone. Names never do.</p>
+        <p className="busfactor-self-help">Only counts leave your device. Names never do.</p>
         {topics.map((t) => {
           const k = knows.has(t);
           const w = wants.has(t);

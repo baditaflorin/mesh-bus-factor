@@ -68,10 +68,22 @@ test("peer A's private tick raises the aggregate count peer B sees", async ({
       /[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}/i,
     );
 
-    // Live both ways: when peer A UN-ticks, peer B's aggregate drops back to
+    // Second advertised cross-peer signal: the "want to learn" overlay.
+    // A's learning-appetite tick must surface as its own aggregate count on B,
+    // independent of the "can carry" count (separate Y.Map field → separate bar).
+    const bWantsBar = bRow.locator(".busfactor-bar-wants .busfactor-bar-num");
+    await expect(bWantsBar).toHaveCount(0);
+    await a.getByRole("checkbox", { name: `I want to learn ${topic}` }).check();
+    await expect(bWantsBar).toHaveText("1 want");
+    // The "can carry" count is untouched by the learning tick.
+    await expect(bKnowsBar).toHaveText("1");
+
+    // Live both ways: when peer A UN-ticks, peer B's aggregates drop back to
     // 0 — proving B re-reads the synced Y.Map rather than caching a stale sum.
     await a.getByRole("checkbox", { name: `I can carry ${topic}` }).uncheck();
     await expect(bKnowsBar).toHaveText("0");
+    await a.getByRole("checkbox", { name: `I want to learn ${topic}` }).uncheck();
+    await expect(bWantsBar).toHaveCount(0);
   } finally {
     await cleanup();
     await context.close().catch(() => {});
