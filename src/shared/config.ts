@@ -1,5 +1,6 @@
 export const appConfig = {
   appName: "mesh-bus-factor",
+  breadcrumbs: false,
   storagePrefix: "mesh-bus-factor",
   description:
     "Peer-to-peer mesh: anonymous bus-factor map. Engineers tick systems they could carry; surfaces single points of failure.",
