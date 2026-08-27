@@ -1,0 +1,8 @@
+{
+  "schemaVersion": 1,
+  "app": "mesh-bus-factor",
+  "sourceCommit": "7a941cfd4d5165258a3b28d7643982a9d5e0143c",
+  "releaseCommit": "7a941cfd4d5165258a3b28d7643982a9d5e0143c",
+  "meshCommonCommit": "025f7ff72e50c4b54a3f4a2d8c88f4f600dec78f",
+  "recordedAt": "2026-08-27T12:30:08Z"
+}
